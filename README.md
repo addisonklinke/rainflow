@@ -33,5 +33,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Acknowledgments
 
-This project began during my master's thesis at the Case Western Reserve University under professors Laura S. Bruckman and Roger H. French. 
-Funding provided by the Solar Durability and Lifetime Extension Research Center (Ohio Third Frontier, Wright Project Program Award Tech 12-004) and the Department of Energy’s SunShot PREDICTS2 program (DE-EE0007143).
+This project began during my master's thesis at Case Western Reserve University under professors Laura S. Bruckman and Roger H. French. 
+Funding provided by the [Solar Durability and Lifetime Extension Research Center](http://engineering.case.edu/centers/sdle) (Ohio Third Frontier, Wright Project Program Award Tech 12-004) and the Department of Energy’s SunShot PREDICTS2 program (DE-EE0007143).
