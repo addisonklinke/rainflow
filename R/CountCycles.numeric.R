@@ -31,7 +31,7 @@ CountCycles.numeric <- function(x) {
   positions <- 1:length(x)
   start <- 1
   remaining <- TRUE
-  current <- NULL
+  current <- positions[1:3]
   cycles <- matrix(0, nrow = floor(length(x) - 1), ncol = 3)
   cyc <- 1
   
@@ -39,15 +39,11 @@ CountCycles.numeric <- function(x) {
     
     # Ensure at least 3 points are available
     if (length(current) < 3) {
-      if (!is.null(current)) {
-        following <- positions[!(positions %in% current)]
-        if (length(following) > 0) {
-          current <- c(current, following[1])
-        } else {
-          break
-        }
+      following <- positions[!(positions %in% current)]
+      if (length(following) > 0) {
+        current <- c(current, following[1])
       } else {
-        current <- positions[1:3]
+        break
       }
     }
     
