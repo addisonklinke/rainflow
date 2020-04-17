@@ -98,7 +98,10 @@ CountCycles.numeric <- function(x) {
   # Format and return
   cycles <- as.data.frame(cycles)
   cycles <- plyr::rename(cycles, c("V1" = "amplitude", "V2" = "mean", "V3" = "cycles"))
-  cycles <- cycles[-which(cycles$cycles == 0), ]
+  remove = which(cycles$cycles == 0)
+  if (length(remove) > 0) {
+    cycles <- cycles[-remove, ]
+  }
   class(cycles) <- c("rainflow", "data.frame")
   return(cycles)
 }
