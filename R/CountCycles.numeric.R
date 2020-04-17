@@ -35,22 +35,23 @@ CountCycles.numeric <- function(x) {
   cycles <- matrix(0, nrow = floor(length(x) - 1), ncol = 3)
   cyc <- 1
   
-  while (remaining) {
+  while (TRUE) {
     
     # Ensure at least 3 points are available
     if (length(current) < 3) {
       if (!is.null(current)) {
-        if (length(positions[-current]) > 0) {
-          current <- c(current, positions[!(positions %in% current)][1])
+        following <- positions[!(positions %in% current)]
+        if (length(following) > 0) {
+          current <- c(current, following[1])
         } else {
-          remaining <- FALSE
+          break
         }
       } else {
         current <- positions[1:3]
       }
     }
     
-    # Compare ranges X and Y
+    # Compare ranges X(t) and Y(t-1)
     len <- length(current)
     x1 <- current[len]
     x2 <- current[len - 1]
@@ -81,7 +82,7 @@ CountCycles.numeric <- function(x) {
       if (sum(!(positions %in% current)) != 0) {
         current <- c(current, positions[!(positions %in% current)][1])
       } else {
-        remaining <- FALSE
+        break
       }
     }
   }
