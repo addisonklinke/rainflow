@@ -21,6 +21,7 @@ devtools::install_github("addisonklinke/rainflow")
 See the sample `weather` dataset provided with the package for a general workflow
 
 ```r
+library("rainflow")
 data(weather)
 p <- FindPeaks(weather$temp, R = 1.1, smooth = TRUE, window = 120)
 r <- CountCycles(p)
