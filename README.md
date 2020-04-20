@@ -1,14 +1,7 @@
 # rainflow
 
-## Overview
-
 rainflow is an R package designed to extract cyclic features from compressed time series. 
 It offers a variety of compression algorithms and follows standard ATSM E1049-85 for calculating the mean and amplitude for each cycle.
-
-## Authors
-
-Addison G. Klinke  
-Email: agk38@case.edu
 
 ## Installation
 
@@ -21,6 +14,18 @@ install.packages("devtools")
 
 # Then install rainflow itself
 devtools::install_github("addisonklinke/rainflow")
+```
+
+## Usage
+
+See the sample `weather` dataset provided with the package for a general workflow
+
+```r
+data(weather)
+p <- FindPeaks(weather$temp, R = 1.1, smooth = TRUE, window = 120)
+r <- CountCycles(p)
+summary(r)
+plot(r)
 ```
 
 ## Contributing
