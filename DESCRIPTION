@@ -1,7 +1,7 @@
 Package: rainflow
 Type: Package
 Title: Extract cyclic features from compressed time series
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: person("Addison", "Klinke", email = "agk38@case.edu", role = c("aut", "cre"))
 Description: Implements ATSM E1049-85 rainflow cycle counting to decompose a simplified time
     series of min/max points into cycles. Calculates the amplitude and mean of each

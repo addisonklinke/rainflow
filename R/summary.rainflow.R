@@ -9,10 +9,10 @@
 #' @export
 
 summary.rainflow <- function(r) {
-  cat(sprintf(paste0("%d cycles detected\n",
+  cat(sprintf(paste0("%.1f cycles detected\n",
                      "%.3f average cycle amplitude\n",
                      "%.3f average cycle mean\n"), 
-              nrow(r),
+              sum(r$cycles),
               mean(r$amplitude),
               mean(r$mean)))
 }
